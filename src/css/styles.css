@@ -1,5 +1,6 @@
 * {
   font-family: 'Montserrat', sans-serif;
+  color: #2e2f42;
 }
 
 body {
@@ -11,6 +12,11 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+p {
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -26,6 +32,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  object-fit: contain;
 }
 
 .form {
@@ -44,7 +51,6 @@ img {
   font-size: 16px;
   line-height: 150%;
   letter-spacing: 0.04em;
-  color: #2e2f42;
   transition: border 250ms ease-in-out;
 }
 
@@ -89,15 +95,74 @@ img {
   gap: 24px;
 }
 
-li {
+.gallery-item {
+  box-sizing: border-box;
+  border: 1px solid #808080;
+  width: 360px;
+  height: 200px;
   transition: scale 250ms ease-in-out;
 }
 
-.gallery-image {
-  width: 360px;
-  height: 200px;
+.gallery-item:hover {
+  scale: 1.04;
 }
 
-li:hover {
-  scale: 1.04;
+.image-container {
+  overflow: hidden;
+  height: 150px;
+}
+
+.states-list {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 25px;
+  height: 48px;
+  background-color: #fff;
+}
+
+.states {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 200%;
+  letter-spacing: 0.04em;
+}
+
+.states-title {
+  font-weight: 600;
+  line-height: 133%;
+}
+
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ccc;
+  border-top: 5px solid #000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 1000;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Скрытый класс для загрузчика */
+.hidden {
+  display: none;
 }
