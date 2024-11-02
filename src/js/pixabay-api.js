@@ -5,6 +5,9 @@ export function fetchImages(searchValue) {
   const params = new URLSearchParams({
     key: API_KEY,
     q: searchValue,
+    image_type: 'photo',
+    orientation: 'horizontal',
+    safesearch: true,
   });
 
   return fetch(`https://pixabay.com/api/?${params}`).then(response => {
